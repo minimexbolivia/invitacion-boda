@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Boda - Carlos & Lourdes</title>
+  <style>
+    body { font-family: "Georgia", serif; background: #f9f7f4; color: #2c2c2c; margin:0; padding:0; text-align:center; }
+    .container { max-width:650px; margin:50px auto; padding:40px 20px; background:white; border-radius:20px; box-shadow:0 0 25px rgba(0,0,0,0.1);}
+    h1 { font-size:2.6em; letter-spacing:2px; margin-bottom:5px;}
+    h2 { font-size:1.6em; margin-top:5px; font-weight:normal; color:#555;}
+    .line { width:60%; height:1px; background:#d1c5aa; margin:20px auto;}
+    .phrase { font-style:italic; font-size:1.1em; margin:30px 0; color:#6a6a6a;}
+    .date, .location, .dresscode { font-size:1.2em; margin:15px 0;}
+    footer { margin-top:40px; font-size:0.9em; color:#777;}
+    .countdown { font-size:1.4em; margin:20px 0; color:#b25a5a; font-weight:bold;}
+    #playButton { padding:12px 25px; font-size:1.2em; cursor:pointer; border:none; border-radius:12px; background-color:#d1c5aa; color:white; margin-top:20px;}
+    #playButton:hover { background-color:#b7997c;}
+    #audioError { color:red; margin-top:15px; font-size:1em; display:none;}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Carlos & Lourdes</h1>
+  <h2>¡Nos casamos!</h2>
+
+  <div class="line"></div>
+  <div class="phrase">“Dos almas, un mismo camino.”</div>
+
+  <div class="date">📅 <b>06 de diciembre de 2025</b></div>
+  <div class="date">🕒 <b>15:00</b></div>
+  <div class="location">📍 Salón de eventos <b>“Olimpos”</b></div>
+  <div class="dresscode">👗 Dress code: <b>Elegante</b></div>
+
+  <div class="line"></div>
+  <div class="countdown" id="countdown">Cargando contador...</div>
+
+  <button id="playButton">🎵 Reproducir música</button>
+  <div id="audioError">No se pudo reproducir la música. Hacé clic en el botón para intentar de nuevo.</div>
+
+  <footer>Con la bendición de Dios y nuestras familias.</footer>
+</div>
+
+<!-- Audio desde Google Drive (enlace directo) -->
+<audio id="bgMusic" loop>
+  <source src="https://drive.google.com/uc?export=download&id=1U8Enjb8vyK5BhUDB9VWW6bi9iGeiXTK7" type="audio/mpeg">
+  Tu navegador no soporta el audio.
+</audio>
+
+<script>
+  // Contador
+  const countdownElement = document.getElementById("countdown");
+  const weddingDate = new Date("December 6, 2025 15:00:00").getTime();
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+      countdownElement.textContent = "¡Hoy es el gran día!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para la boda`;
+  }, 1000);
+
+  // Música
+  const playButton = document.getElementById("playButton");
+  const bgMusic = document.getElementById("bgMusic");
+  const audioError = document.getElementById("audioError");
+  let isPlaying = false;
+
+  playButton.addEventListener("click", () => {
+    bgMusic.play().then(() => {
+      isPlaying = true;
+      playButton.textContent = "⏸ Pausar música";
+      audioError.style.display = "none";
+    }).catch(err => {
+      console.error("Error al reproducir:", err);
+      audioError.style.display = "block";
+    });
+  });
+
+  // Doble clic para pausar
+  playButton.addEventListener("dblclick", () => {
+    if (isPlaying) {
+      bgMusic.pause();
+      isPlaying = false;
+      playButton.textContent = "🎵 Reproducir música";
+    }
+  });
+</script>
+
+</body>
+</html>
