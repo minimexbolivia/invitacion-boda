@@ -6,11 +6,11 @@
 <title>Invitación de Boda - Carlos & Lourdes</title>
 <style>
 /* ============================
-   FUENTE BEAUTIFUL PEOPLE
+   FUENTE BIRDS OF PARADISE
    ============================ */
 @font-face {
-  font-family: 'BeautifulPeople';
-  src: url('BeautifulPeople.ttf') format('truetype');
+  font-family: 'BirdsOfParadise';
+  src: url('Birds of Paradise.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,7 +27,7 @@ body {
 }
 
 /* ============================
-   PORTADA
+   PORTADA (sin cambios)
    ============================ */
 #portada {
   position: relative;
@@ -38,11 +38,11 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 60px; /* sube el título y botón */
+  padding-top: 60px;
 }
 
 #portada h1 {
-  font-family: 'BeautifulPeople', cursive;
+  font-family: 'BeautifulPeople', cursive; /* portada mantiene fuente anterior */
   font-size: 3rem;
   letter-spacing: 3px;
   color: #f5d98f;
@@ -60,7 +60,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  margin-top: 25px; /* subido un poco */
+  margin-top: 25px;
 }
 
 #btnEntrar:hover {
@@ -78,10 +78,21 @@ body {
   background: white;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0,0,0,0.1);
+  position: relative; /* para que las flores se posicionen dentro */
+  font-family: 'BirdsOfParadise', serif; /* toda la invitación con la nueva fuente */
 }
 
+/* Flores en las esquinas */
+.corner-flower {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  z-index: 1;
+}
+.top-left { top: -10px; left: -10px; }
+.top-right { top: -10px; right: -10px; }
+
 #contenido h1 {
-  font-family: 'BeautifulPeople', cursive;
   font-size: 3rem;
   letter-spacing: 3px;
   color: #f5d98f;
@@ -168,6 +179,11 @@ footer { margin-top:40px; font-size:0.9em; color:#777; }
 
 <!-- CONTENIDO INVITACIÓN -->
 <div id="contenido">
+
+  <!-- Flores en las esquinas -->
+  <img src="flor-top-left.png" class="corner-flower top-left">
+  <img src="flor-top-right.png" class="corner-flower top-right">
+
   <h1>Carlos & Lourdes</h1>
   <div class="introPhrase">
     Porque no importa el tiempo para darte cuenta que encontraste el amor de tu vida y así comenzar una historia que no tenga fin.
@@ -198,7 +214,7 @@ footer { margin-top:40px; font-size:0.9em; color:#777; }
   <div class="location">📍 Salón de eventos <b>“Olimpos”</b></div>
   <div class="dresscode">👗 Dress code: <b>Elegante</b></div>
   <div class="line"></div>
-  
+
   <!-- Contador -->
   <div class="countdown" id="countdown">Cargando contador...</div>
 
