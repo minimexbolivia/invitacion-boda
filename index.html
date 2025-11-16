@@ -42,9 +42,9 @@
   <footer>Con la bendición de Dios y nuestras familias.</footer>
 </div>
 
-<!-- Audio desde Google Drive (enlace directo) -->
+<!-- Audio desde repositorio -->
 <audio id="bgMusic" loop>
-  <source src="https://drive.google.com/uc?export=download&id=1U8Enjb8vyK5BhUDB9VWW6bi9iGeiXTK7" type="audio/mpeg">
+  <source src="musica.mp3.mp3" type="audio/mpeg">
   Tu navegador no soporta el audio.
 </audio>
 
@@ -87,7 +87,6 @@
     });
   });
 
-  // Doble clic para pausar
   playButton.addEventListener("dblclick", () => {
     if (isPlaying) {
       bgMusic.pause();
