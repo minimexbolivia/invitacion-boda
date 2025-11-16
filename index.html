@@ -17,13 +17,13 @@ img{max-width:100%; display:block;}
 #portada {position: fixed; inset:0; width:100%; height:100vh; background:url('PORTADA3.jpg') center/cover no-repeat;}
 .portada-inner{position:relative; width:100%; height:100%;}
 .nombres-portada{
-  position:absolute; top:12%; left:50%; transform:translateX(-50%);
+  position:absolute; top:15%; left:50%; transform:translateX(-50%);
   pointer-events:none; text-align:center; white-space:nowrap;
 }
 .nombres-portada .nombre-carlos,
 .nombres-portada .nombre-lourdes{font-family:'BirdsOfParadise', serif; font-size:2rem; color:var(--gold-bright); text-shadow:0 0 10px rgba(0,0,0,0.6);}
 .nombres-portada .nombre-y{margin:0 6px; font-family:'BirdsOfParadise', serif; font-size:1.8rem; color:var(--gold-bright); text-shadow:0 0 10px rgba(0,0,0,0.6);}
-#btnEntrar{position:absolute; top:28%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
+#btnEntrar{position:absolute; top:30%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
 #btnEntrar:hover{background:var(--accent-dark);}
 
 /* === INVITACION INTERNA === */
@@ -34,7 +34,7 @@ img{max-width:100%; display:block;}
 .corner-bottom-right{bottom:-10px; right:-10px;}
 .corner-bottom-left{bottom:-10px; left:-10px;}
 
-.nombres-inv{display:flex; justify-content:center; margin:0 auto; font-family:'BirdsOfParadise', serif; font-size:2.6rem; color:var(--gold-dark);}
+.nombres-inv{display:flex; justify-content:center; margin:0 auto; font-family:'BirdsOfParadise', serif; font-size:2.6rem; color:#a67c00;}
 .nombres-inv .carlos{margin-right:4px;}
 .nombres-inv .y{margin:0 4px;}
 .nombres-inv .lourdes{margin-left:4px;}
@@ -66,6 +66,9 @@ h2.big{font-family:'BirdsOfParadise', serif; font-size:2.2rem; margin:4px 0 4px 
 
 .confirm-btn{display:block; margin:6px auto; padding:10px 20px; border-radius:12px; border:none; background:#a67c00; color:#fff; font-size:1.1rem; font-weight:700; text-align:center; cursor:pointer;}
 .confirm-btn:hover{background:#d4af37;}
+
+.photo-gallery{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.photo-gallery img{width:120px; border-radius:10px;}
 
 .end-space{height:120px;}
 
@@ -148,6 +151,13 @@ h2.big{font-family:'BirdsOfParadise', serif; font-size:2.2rem; margin:4px 0 4px 
   <button id="playButton">🎵 Reproducir música</button>
   <a href="https://wa.me/59175983168?text=Hola%20Carlos,%20confirmo%20mi%20asistencia" target="_blank" class="confirm-btn">Confirmar Asistencia</a>
 
+  <!-- GALERÍA DE FOTOS -->
+  <div class="photo-gallery">
+    <img src="img1.jpeg" alt="">
+    <img src="img2.jpeg" alt="">
+    <img src="img3.jpeg" alt="">
+  </div>
+
   <div class="end-space" aria-hidden="true"></div>
 </div>
 
@@ -195,8 +205,5 @@ playBtn.addEventListener('click',()=>{
 </script>
 </body>
 </html>
-
-
-
 
 
