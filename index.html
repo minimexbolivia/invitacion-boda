@@ -16,14 +16,37 @@ img{max-width:100%; display:block;}
 /* === PORTADA === */
 #portada {position: fixed; inset:0; width:100%; height:100vh; background:url('PORTADA3.jpg') center/cover no-repeat;}
 .portada-inner{position:relative; width:100%; height:100%;}
+
 .nombres-portada{
-  position:absolute; top:15%; left:50%; transform:translateX(-50%);
-  pointer-events:none; text-align:center; white-space:nowrap;
+  position:absolute; top:20%; /* un poco más arriba */
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+  text-align:center;
 }
-.nombres-portada .nombre-carlos,
-.nombres-portada .nombre-lourdes{font-family:'BirdsOfParadise', serif; font-size:2rem; color:var(--gold-bright); text-shadow:0 0 10px rgba(0,0,0,0.6);}
-.nombres-portada .nombre-y{margin:0 6px; font-family:'BirdsOfParadise', serif; font-size:1.8rem; color:var(--gold-bright); text-shadow:0 0 10px rgba(0,0,0,0.6);}
-#btnEntrar{position:absolute; top:30%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
+
+.nombre-carlos-lourdes{
+  font-family:'BirdsOfParadise', serif;
+  font-size:2.4rem;
+  color:var(--gold-bright);
+  text-shadow:0 0 10px rgba(0,0,0,0.6);
+  white-space:nowrap; /* evita que se rompa en varias líneas */
+}
+
+#btnEntrar{
+  position:absolute;
+  top:32%; /* justo debajo de los nombres */
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--accent);
+  color:#000;
+  border:none;
+  padding:12px 30px;
+  border-radius:12px;
+  font-size:1.05rem;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
 #btnEntrar:hover{background:var(--accent-dark);}
 
 /* === INVITACION INTERNA === */
@@ -86,9 +109,7 @@ h2.big{font-family:'BirdsOfParadise', serif; font-size:2.2rem; margin:4px 0 4px 
 <div id="portada">
   <div class="portada-inner">
     <div class="nombres-portada" aria-hidden="true">
-      <div class="nombre-carlos">Carlos</div>
-      <div class="nombre-y">&</div>
-      <div class="nombre-lourdes">Lourdes</div>
+      <div class="nombre-carlos-lourdes">Carlos & Lourdes</div>
     </div>
     <button id="btnEntrar" onclick="abrirInvitacion()">Ingresar a la invitación</button>
   </div>
