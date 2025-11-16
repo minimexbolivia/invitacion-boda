@@ -17,8 +17,8 @@
   #portada {position: fixed; inset:0; width:100%; height:100vh; background:url('PORTADA3.jpg') center/cover no-repeat;}
   .portada-inner{position:relative; width:100%; height:100%;}
   .nombres-portada{position:absolute; top:10%; left:0; right:0; height:80px; pointer-events:none; text-align:center;}
-  .nombres-portada .nombre-todo{font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.8rem; line-height:1; text-shadow:0 0 10px rgba(0,0,0,0.6);}
-  #btnEntrar{position:absolute; top:25%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
+  .nombres-portada .nombre-todo{font-family:'BirdsOfParadise', serif; color:#fff; font-size:2.8rem; line-height:1; text-shadow:0 0 10px rgba(0,0,0,0.6);}
+  #btnEntrar{position:absolute; top:18%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
   #btnEntrar:hover{background:var(--accent-dark);}
 
   /* === INVITACION INTERNA === */
@@ -43,11 +43,13 @@
   .parents{text-align:center; margin:18px 0 10px 0; font-size:1.3rem; line-height:1.6; color:#444; font-family:'BirdsOfParadise', serif;}
   .parents .line-names{margin-top:6px; font-weight:600;}
 
-  .invitationText{font-family:'BirdsOfParadise', serif; font-size:1.6rem; color:#555; text-align:center; margin:18px auto 20px auto; max-width:88%; line-height:1.45;}
+  .invitationText{font-family:'BirdsOfParadise', serif; font-size:1.6rem; color:#555; text-align:center; margin:18px auto 8px auto; max-width:88%; line-height:1.45;} /* solo primera parte */
+  .church-name{font-family:'BirdsOfParadise', serif; font-size:1.6rem; text-align:center; color:#555; margin:4px auto 12px auto;}
+
   .decor-line{width:60%; height:1px; background:#d1c5aa; margin:18px auto;}
   .phrase-small{font-style:italic; font-size:1.15rem; color:#6a6a6a; text-align:center; margin:16px 0;}
 
-  .date-format{display:flex; justify-content:center; align-items:center; gap:18px; margin:18px 0; color:var(--gold-dark);}
+  .date-format{display:flex; justify-content:center; align-items:center; gap:18px; margin:18px 0; color:var(--gold-dark); line-height:1.6;}
   .date-format .num, .date-format .year{font-family:'Georgia', serif; font-size:1.7rem; font-weight:700;}
   .date-format .month{font-family:'BirdsOfParadise', serif; font-size:1.55rem; font-weight:700;}
   .date-format .sep{font-size:1.6rem; color:#666;}
@@ -59,7 +61,7 @@
   #playButton{display:block; margin:18px auto; padding:10px 22px; border-radius:10px; border:none; background:#d1c5aa; color:#fff; font-size:1.1rem; cursor:pointer;}
   #playButton:hover{background:#b7997c;}
 
-  .map-link{display:block; margin:8px auto 0 auto; padding:8px 12px; border:2px solid #c9a97a; border-radius:8px; color:var(--gold-dark); font-weight:700; text-align:center;}
+  .map-link{display:block; margin:4px auto 0 auto; padding:8px 12px; border:2px solid #c9a97a; border-radius:8px; color:var(--gold-dark); font-weight:700; text-align:center;}
 
   .end-space{height:720px;} /* doble espacio final */
 
@@ -107,10 +109,10 @@
       <div class="line-names">Remigia Cadima</div>
     </div>
 
-    <div class="invitationText">Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil, en la Catedral San Pedro de Aiquile.</div>
+    <div class="invitationText">Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil.</div>
 
-    <img src="iglesia.png" alt="Iglesia" style="display:block; margin:8px auto 4px auto; max-width:280px;">
-
+    <img src="iglesia.png" alt="Iglesia" style="display:block; margin:4px auto 4px auto; max-width:280px;">
+    <div class="church-name">Catedral Parroquia San Pedro de Aiquile</div>
     <a href="https://maps.app.goo.gl/gkzPheftRCghMEJG7" target="_blank" class="map-link">Ver ubicación</a>
 
     <div class="decor-line" aria-hidden="true"></div>
