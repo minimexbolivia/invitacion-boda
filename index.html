@@ -17,7 +17,7 @@
   #portada {position: fixed; inset:0; width:100%; height:100vh; background:url('PORTADA3.jpg') center/cover no-repeat;}
   .portada-inner{position:relative; width:100%; height:100%;}
   .nombres-portada{position:absolute; top:10%; left:0; right:0; height:80px; pointer-events:none; text-align:center;}
-  .nombres-portada .nombre-todo{font-family:'BirdsOfParadise', serif; color:#fff; font-size:2.8rem; line-height:1; text-shadow:0 0 12px #a67c00, 0 0 20px #fff;} /* resplandor dorado exterior */
+  .nombres-portada .nombre-todo{font-family:'BirdsOfParadise', serif; color:#FFD700; font-size:2.8rem; line-height:1; text-shadow:0 0 12px #a67c00, 0 0 20px #fff;} /* dorado fuerte */
   #btnEntrar{position:absolute; top:18%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
   #btnEntrar:hover{background:var(--accent-dark);}
 
@@ -46,7 +46,7 @@
   .invitationText{font-family:'BirdsOfParadise', serif; font-size:1.6rem; color:#555; text-align:center; margin:18px auto 8px auto; max-width:88%; line-height:1.45;} 
   .church-name{font-family:'BirdsOfParadise', serif; font-size:1.6rem; text-align:center; color:#a67c00; margin:4px auto 12px auto;} /* dorado oscuro */
 
-  .decor-line{width:60%; height:1px; background:#d1c5aa; margin:18px auto;}
+  .decor-line{width:60%; height:auto; margin:18px auto;}
   .phrase-small{font-style:italic; font-size:1.15rem; color:#6a6a6a; text-align:center; margin:16px 0;}
 
   .date-format{display:flex; justify-content:center; align-items:center; gap:18px; margin:18px 0; color:var(--gold-dark); line-height:1.6;}
@@ -64,6 +64,9 @@
   .map-link{display:block; margin:4px auto 0 auto; padding:8px 12px; border:2px solid #c9a97a; border-radius:8px; color:var(--gold-dark); font-weight:700; text-align:center;}
   .faltan{text-align:center; color:#a67c00; font-size:1.5rem; margin:8px 0;}
 
+  .mural-familia{display:flex; justify-content:center; gap:8px; margin-top:20px;}
+  .mural-familia img{width:200px; height:auto; border-radius:12px;}
+
   .end-space{height:720px;}
 
   @media(max-width:700px){
@@ -72,6 +75,7 @@
     .date-format .num,.date-format .year{font-size:1.4rem;}
     .date-format .month{font-size:1.2rem;}
     .countdown{font-size:1.1rem;}
+    .mural-familia img{width:100px;}
   }
 </style>
 </head>
@@ -101,6 +105,7 @@
     <div class="introPhrase">Porque no importa el tiempo para darte cuenta que encontraste el amor de tu vida y así comenzar una historia que no tenga fin.</div>
 
     <h2 class="big">¡Nos casamos!</h2>
+    <img src="separador.png" class="decor-line" alt="Separador">
 
     <div class="parents">
       En compañía de nuestros padres:<br>
@@ -109,28 +114,41 @@
       <div class="line-names">Simón Vela (+)</div>
       <div class="line-names">Remigia Cadima</div>
     </div>
+    <img src="separador.png" class="decor-line" alt="Separador">
 
     <div class="invitationText">Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil.</div>
 
     <img src="iglesia.png" alt="Iglesia" style="display:block; margin:4px auto 4px auto; max-width:280px;">
     <div class="church-name">Catedral Parroquia San Pedro de Aiquile</div>
     <a href="https://maps.app.goo.gl/gkzPheftRCghMEJG7" target="_blank" class="map-link">Ver ubicación</a>
+    <img src="separador.png" class="decor-line" alt="Separador">
 
     <div class="faltan">FALTAN</div>
     <div class="countdown" id="countdown">Cargando contador...</div>
+    <img src="separador.png" class="decor-line" alt="Separador">
 
     <div class="date-format">
       <div class="num">06</div><div class="sep">|</div>
       <div class="month">Diciembre</div><div class="sep">|</div>
       <div class="year">2025</div>
     </div>
+    <img src="separador.png" class="decor-line" alt="Separador">
 
     <div class="meta">🕒 15:00</div>
+    <img src="separador.png" class="decor-line" alt="Separador">
+
     <div class="meta">📍 Salón de eventos “Olimpos”</div>
     <a href="https://maps.app.goo.gl/Hh512WUcVrqPM95H9" target="_blank" class="map-link">Ver ubicación</a>
+    <img src="separador.png" class="decor-line" alt="Separador">
 
     <button id="playButton">🎵 Reproducir música</button>
     <div id="audioError" style="display:none;color:red;margin-top:8px;">No se pudo reproducir la música. Tocá de nuevo.</div>
+
+    <div class="mural-familia">
+      <img src="img1.jpeg" alt="Familia 1">
+      <img src="img2.jpeg" alt="Familia 2">
+      <img src="img3.jpeg" alt="Familia 3">
+    </div>
 
     <footer style="margin-top:24px;">Con la bendición de Dios y nuestras familias.</footer>
     <div class="end-space" aria-hidden="true"></div>
@@ -181,6 +199,8 @@
 </script>
 </body>
 </html>
+
+
 
 
 
