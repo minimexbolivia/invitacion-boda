@@ -1,297 +1,397 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Invitación de Boda - Carlos & Lourdes</title>
 <style>
-/* ============================
-   FUENTE BIRDS OF PARADISE
-   ============================ */
-@font-face {
-  font-family: 'BirdsOfParadise';
-  src: url('Birds of Paradise.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+  /* --- Fuentes --- */
+  @font-face {
+    font-family: 'BirdsOfParadise';
+    src: url('Birds of Paradise.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* (opcional) si aún usas BeautifulPeople para portada */
+  @font-face {
+    font-family: 'BeautifulPeople';
+    src: url('BeautifulPeople.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-/* ============================
-   BASE
-   ============================ */
-body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background: #f9f7f4;
-  color: #2c2c2c;
-  text-align: center;
-}
+  /* --- Reset / base --- */
+  :root {
+    --bg: #f9f7f4;
+    --accent: #f5d98f;
+    --accent-dark: #e0c56f;
+  }
+  html,body {
+    height:100%;
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    font-family: 'Georgia', serif;
+    color:#2c2c2c;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  button { font-family: inherit; }
 
-/* ============================
-   PORTADA
-   ============================ */
-#portada {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url('PORTADA3.jpg') center center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 60px;
-}
+  /* ===========================
+     PORTADA (NO tocar imagen)
+     =========================== */
+  #portada{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background: url('PORTADA3.jpg') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding-top:60px; /* ajustable */
+    z-index: 5;
+  }
 
-#portada h1 {
-  font-family: 'BeautifulPeople', cursive; 
-  font-size: 3rem;
-  letter-spacing: 3px;
-  color: #FFD700; /* dorado más visible */
-  text-shadow: 0 0 12px #000;
-  margin: 5px 0 20px 0;
-}
+  #portada h1{
+    font-family: 'BeautifulPeople', cursive;
+    font-size: 3.2rem; /* tamaño portada */
+    letter-spacing:3px;
+    color: #FFD700; /* dorado más visible */
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+    margin: 5px 0 8px 0;
+  }
 
-#btnEntrar {
-  padding: 15px 40px;
-  border: none;
-  border-radius: 10px;
-  background: #f5d98f;
-  color: #000;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  margin-top: 25px;
-}
+  #btnEntrar {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #000;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    margin-top: 28px; /* separar del título */
+  }
+  #btnEntrar:hover { background: var(--accent-dark); }
 
-#btnEntrar:hover {
-  background: #e0c56f;
-}
+  /* ===========================
+     CONTENIDO INVITACIÓN
+     =========================== */
+  #contenido{
+    display:none;
+    max-width: 750px;
+    margin: 40px auto 80px auto;
+    padding: 40px 28px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    position: relative; /* para las flores absolutas */
+    z-index: 1;
+    font-family: 'BirdsOfParadise', serif; /* fuente elegante para todo el contenido */
+  }
 
-/* ============================
-   CONTENIDO INVITACIÓN
-   ============================ */
-#contenido {
-  display: none;
-  max-width: 650px;
-  margin: 50px auto;
-  padding: 40px 20px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.1);
-  position: relative; 
-  font-family: 'BirdsOfParadise', serif; 
-}
+  /* --- Flores en esquinas (duplicadas) --- */
+  .corner-flower {
+    position: absolute;
+    width: 160px;  /* duplicado de 80px */
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .top-right { top: -10px; right: -10px; transform: rotate(0deg); }
+  .bottom-right { bottom: -10px; right: -10px; transform: rotate(0deg); }
+  .bottom-left { bottom: -10px; left: -10px; transform: rotate(0deg); }
 
-/* Flores esquinas */
-.corner-flower {
-  position: absolute;
-  width: 80px;
-  height: auto;
-  z-index: 1;
-}
-.top-right { top: -10px; right: -10px; }
-.bottom-right { bottom: -10px; right: -10px; }
-.bottom-left { bottom: -10px; left: -10px; }
+  /* --- Encabezados y textos --- */
+  #contenido h1{
+    font-size: 3.2rem; /* aumentado */
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin: 6px 0 6px 0;
+  }
 
-#contenido h1 {
-  font-size: 3.2rem;
-  letter-spacing: 3px;
-  color: #f5d98f;
-  text-shadow: 0 0 10px #000;
-  margin-bottom: 10px;
-}
+  .introPhrase {
+    font-style: italic;
+    font-size: 1.8rem; /* aumentado (aprox +3 niveles visual) */
+    color: #6a6a6a;
+    margin: 14px 0 22px 0;
+    line-height: 1.4;
+  }
 
-.introPhrase {
-  font-style: italic;
-  font-size: 1.6em; 
-  color: #6a6a6a;
-  margin: 15px 0 25px 0;
-  line-height: 1.5em;
-}
+  h2 {
+    font-size: 2.2rem; /* "¡Nos casamos!" más grande */
+    margin: 6px 0 12px 0;
+    font-weight: 600;
+    color: #4a4a4a;
+  }
 
-h2 {
-  font-size:1.7em; 
-  margin-top:5px;
-  font-weight:normal;
-  color:#555;
-}
+  /* Padres: más pequeños */
+  .parents {
+    margin: 18px 0;
+    font-size: 1.1rem; /* más pequeño para que entre perfecto */
+    color: #555;
+    line-height: 1.6;
+  }
+  .parents .names { font-size: 1.0rem; margin-top:6px; color:#444; }
 
-.parents {
-  margin: 20px 0;
-  font-size: 1.5em; 
-  color: #555;
-  line-height: 1.5em;
-}
+  .invitationText {
+    font-size: 1.6rem; /* aumentado */
+    color: #555;
+    margin: 18px 0 22px 0;
+    line-height: 1.45;
+  }
 
-.father-bridegroom, .mother-bride {
-  margin-top: 10px;
-}
+  .line { width:60%; height:1px; background:#d1c5aa; margin:18px auto; }
 
-.invitationText {
-  font-size: 1.6em; 
-  color: #555;
-  font-style: normal;
-  margin: 15px 0 25px 0;
-  line-height: 1.5em;
-}
+  .phrase { font-style: italic; font-size:1.2rem; margin: 20px 0; color:#6a6a6a; }
 
-.line { width:60%; height:1px; background:#d1c5aa; margin:20px auto; }
-.phrase { font-style:italic; font-size:1.2em; margin:30px 0; color:#6a6a6a; }
+  /* --- Fecha, hora y contador con fuente simple para números --- */
+  .date, .location, .dresscode {
+    font-family: 'Georgia', serif; /* números claros */
+    font-size: 1.45rem;
+    margin: 10px 0;
+    color: #333;
+  }
 
-/* Fecha, hora y contador con fuente simple */
-.date, .location, .dresscode, .countdown, .finalDate {
-  font-family: 'Georgia', serif;
-  font-size: 1.3em; 
-  margin: 15px 0;
-}
+  /* Fecha especial 06 | Diciembre | 2025 */
+  .date-format {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    font-weight:700;
+    margin: 16px 0;
+  }
+  .date-format .num, .date-format .year {
+    font-family: 'Georgia', serif;
+    font-size: 2.4rem; /* grande para números */
+    letter-spacing: 2px;
+  }
+  .date-format .month {
+    font-family: 'BirdsOfParadise', serif; /* mes en la fuente elegante */
+    font-size: 2.0rem;
+    padding: 0 8px;
+  }
+  .date-format .sep {
+    font-size: 2.0rem;
+    color: #666;
+    padding: 0 6px;
+  }
 
-.finalDate { font-size:1.1em; color:#777; margin-top:10px; font-style: italic; }
+  /* Contador (números en Georgia) */
+  .countdown {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    margin: 18px 0;
+    color: #b25a5a;
+    font-weight: bold;
+  }
 
-#playButton {
-  padding:12px 25px;
-  font-size:1.2em;
-  cursor:pointer;
-  border:none;
-  border-radius:12px;
-  background-color:#d1c5aa;
-  color:white;
-  margin-top:20px;
-}
+  .finalDate {
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    color: #777;
+    margin-top: 10px;
+    font-style: italic;
+  }
 
-#playButton:hover { background-color:#b7997c; }
-#audioError { color:red; margin-top:15px; font-size:1em; display:none; }
-footer { margin-top:40px; font-size:0.9em; color:#777; }
+  /* Botón de música y mensajes */
+  #playButton {
+    padding: 12px 26px;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    border: none;
+    background: #d1c5aa;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 18px;
+  }
+  #playButton:hover { background:#b7997c; }
+  #audioError { color: red; display:none; margin-top:10px; }
 
-@media (max-width: 600px) {
-  #portada h1 { font-size: 2.2rem; }
-  #btnEntrar { padding: 12px 30px; font-size: 1rem; margin-top: 15px; }
-  #portada { padding-top: 40px; background-size: cover; }
-  #contenido { margin: 20px 15px; padding: 25px 15px; }
-  h2 { font-size:1.5em; }
-  .introPhrase, .invitationText { font-size: 1.4em; }
-  .date, .location, .dresscode { font-size:1.2em; }
-  .countdown { font-size:1.3em; }
-  #playButton { font-size:1em; padding:10px 20px; }
-}
+  footer {
+    margin-top:26px;
+    font-size: 0.95rem;
+    color:#777;
+  }
+
+  /* Google Maps link style */
+  .map-link {
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 14px;
+    background:transparent;
+    border:2px solid #c9a97a;
+    color:#8A4A6A;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:8px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 700px) {
+    #contenido { margin: 20px 12px; padding: 22px; }
+    .corner-flower { width: 120px; } /* menor en móvil */
+    #contenido h1 { font-size: 2.4rem; }
+    .introPhrase { font-size: 1.3rem; }
+    h2 { font-size: 1.8rem; }
+    .invitationText { font-size: 1.2rem; }
+    .date-format .num, .date-format .year { font-size: 1.6rem; }
+    .date-format .month { font-size: 1.4rem; }
+    .countdown { font-size: 1.2rem; }
+    .date, .location, .dresscode { font-size: 1.05rem; }
+  }
 </style>
 </head>
 <body>
 
-<!-- PORTADA -->
-<div id="portada">
-  <h1>Carlos & Lourdes</h1>
-  <button id="btnEntrar" onclick="abrirInvitacion()">Ingresar a la invitación</button>
-</div>
-
-<!-- CONTENIDO INVITACIÓN -->
-<div id="contenido">
-
-  <!-- Flores esquinas -->
-  <img src="flor_sup_der.png.png" class="corner-flower top-right">
-  <img src="flor_inf_der.png.png" class="corner-flower bottom-right">
-  <img src="flor_inf_izq.png.png" class="corner-flower bottom-left">
-
-  <h1>Carlos & Lourdes</h1>
-  <div class="introPhrase">
-    Porque no importa el tiempo para darte cuenta que encontraste el amor de tu vida y así comenzar una historia que no tenga fin.
+  <!-- ========== PORTADA ========== -->
+  <div id="portada">
+    <h1>Carlos &amp; Lourdes</h1>
+    <button id="btnEntrar" onclick="abrirInvitacion()">Ingresar a la invitación</button>
   </div>
-  <h2>¡Nos casamos!</h2>
 
-  <!-- Padres de los novios -->
-  <div class="parents">
-    <div class="father-bridegroom">
-      En compañía de nuestros padres:<br>
-      Encaración Montaño y Patrona Gonzales
+  <!-- ========== CONTENIDO ========== -->
+  <div id="contenido">
+    <!-- Flores en esquinas (asegúrate que los archivos existan con exactitud de nombre) -->
+    <img src="flor_sup_der.png.png" alt="" class="corner-flower top-right">
+    <img src="flor_inf_der.png.png" alt="" class="corner-flower bottom-right">
+    <img src="flor_inf_izq.png.png" alt="" class="corner-flower bottom-left">
+
+    <!-- Nombres -->
+    <h1>Carlos &amp; Lourdes</h1>
+
+    <!-- Frase introductoria -->
+    <div class="introPhrase">
+      Porque no importa el tiempo para darte cuenta que encontraste el amor de tu vida y así comenzar una historia que no tenga fin.
     </div>
-    <div class="mother-bride">
-      Simon Vela (+) y Remigia Cadima
+
+    <!-- Nos casamos (grande) -->
+    <h2>¡Nos casamos!</h2>
+
+    <!-- Padres (más pequeños) -->
+    <div class="parents">
+      En compañía de nuestros padres:
+      <div class="names">Encaración Montaño y Patrona Gonzales</div>
+      <div class="names">Simon Vela (+) y Remigia Cadima</div>
     </div>
+
+    <!-- Invitación formal -->
+    <div class="invitationText">
+      Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil, en la Catedral San Pedro de Aiquile.
+    </div>
+
+    <div class="line"></div>
+
+    <div class="phrase">“Dos almas, un mismo camino.”</div>
+
+    <!-- Fecha con formato especial (números en Georgia) -->
+    <div class="date-format" aria-label="Fecha de la boda">
+      <div class="num">06</div>
+      <div class="sep">|</div>
+      <div class="month">Diciembre</div>
+      <div class="sep">|</div>
+      <div class="year">2025</div>
+    </div>
+
+    <!-- Lugar y hora -->
+    <div class="date">🕒 15:00</div>
+    <div class="location">📍 Salón de eventos “Olimpos”</div>
+    <div class="dresscode">👗 Dress code: Elegante</div>
+
+    <div class="line"></div>
+
+    <!-- Contador -->
+    <div class="countdown" id="countdown">Cargando contador...</div>
+
+    <!-- Fecha final -->
+    <div class="finalDate">Aiquile, diciembre 2025</div>
+
+    <!-- Botón de música -->
+    <button id="playButton">🎵 Reproducir música</button>
+    <div id="audioError">No se pudo reproducir la música. Tocá de nuevo.</div>
+
+    <!-- Mapa / Ubicación -->
+    <div style="margin-top:20px;">
+      <div style="font-size:1rem;color:#444;">RR2C+53M Olimpo, Baptista, Aiquile</div>
+      <a class="map-link" href="https://maps.app.goo.gl/Hh512WUcVrqPM95H9" target="_blank" rel="noopener noreferrer">
+        Ver en Google Maps
+      </a>
+    </div>
+
+    <footer>Con la bendición de Dios y nuestras familias.</footer>
   </div>
 
-  <!-- Invitación formal -->
-  <div class="invitationText">
-    Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil, en la Catedral San Pedro de Aiquile.
-  </div>
-
-  <div class="line"></div>
-  <div class="phrase">“Dos almas, un mismo camino.”</div>
-  <div class="date">📅 06 de diciembre de 2025</div>
-  <div class="date">🕒 15:00</div>
-  <div class="location">📍 Salón de eventos “Olimpos”</div>
-  <div class="dresscode">👗 Dress code: Elegante</div>
-  <div class="line"></div>
-
-  <!-- Contador -->
-  <div class="countdown" id="countdown">Cargando contador...</div>
-
-  <!-- Fecha final -->
-  <div class="finalDate">Aiquile, diciembre 2025</div>
-
-  <!-- Botón de música -->
-  <button id="playButton">🎵 Reproducir música</button>
-  <div id="audioError">No se pudo reproducir la música. Tocá de nuevo.</div>
-
-  <footer>Con la bendición de Dios y nuestras familias.</footer>
-</div>
-
-<!-- Música -->
-<audio id="bgMusic" loop>
-  <source src="musica.mp3.mp3" type="audio/mpeg">
-  Tu navegador no soporta el audio.
-</audio>
+  <!-- ========== AUDIO ========== -->
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
 
 <script>
-function abrirInvitacion() {
-  document.getElementById("portada").style.display = "none";
-  document.getElementById("contenido").style.display = "block";
-  const bgMusic = document.getElementById("bgMusic");
-  bgMusic.play().catch(() => console.log("No se pudo reproducir automáticamente, clic para reproducir."));
-}
-
-// Contador
-const countdownElement = document.getElementById("countdown");
-const weddingDate = new Date("December 6, 2025 15:00:00").getTime();
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
-  if (distance < 0) {
-    countdownElement.textContent = "¡Hoy es el gran día!";
-    return;
+  // Abrir invitación
+  function abrirInvitacion(){
+    document.getElementById('portada').style.display = 'none';
+    document.getElementById('contenido').style.display = 'block';
+    const bg = document.getElementById('bgMusic');
+    bg.play().catch(()=>console.log('Autoplay bloqueado; pulsa reproducir.'));
   }
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para la boda`;
-}, 1000);
 
-// Botón reproducir/pausar música
-const playButton = document.getElementById("playButton");
-const bgMusic = document.getElementById("bgMusic");
-const audioError = document.getElementById("audioError");
-let isPlaying = false;
+  // Contador
+  const countdownElement = document.getElementById('countdown');
+  // fecha: 6 diciembre 2025 15:00 (hora local)
+  const weddingDate = new Date('December 6, 2025 15:00:00').getTime();
 
-playButton.addEventListener("click", () => {
-  bgMusic.play()
-    .then(() => {
+  function updateCountdown(){
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+    if(distance <= 0) {
+      countdownElement.textContent = '¡Hoy es el gran día!';
+      return;
+    }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Los números usarán la familia Georgia por CSS (.countdown)
+    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para la boda`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Botón de música
+  const playButton = document.getElementById('playButton');
+  const bgMusic = document.getElementById('bgMusic');
+  const audioError = document.getElementById('audioError');
+  let isPlaying = false;
+
+  playButton.addEventListener('click', () => {
+    bgMusic.play().then(() => {
       isPlaying = true;
-      playButton.textContent = "⏸ Pausar música";
-      audioError.style.display = "none";
-    })
-    .catch(() => audioError.style.display = "block");
-});
+      playButton.textContent = '⏸ Pausar música';
+      audioError.style.display = 'none';
+    }).catch(() => {
+      audioError.style.display = 'block';
+    });
+  });
 
-playButton.addEventListener("dblclick", () => {
-  if (isPlaying) {
-    bgMusic.pause();
-    isPlaying = false;
-    playButton.textContent = "🎵 Reproducir música";
-  }
-});
+  // Doble click pausa (igual que antes)
+  playButton.addEventListener('dblclick', () => {
+    if(isPlaying){
+      bgMusic.pause();
+      isPlaying = false;
+      playButton.textContent = '🎵 Reproducir música';
+    }
+  });
 </script>
 </body>
 </html>
-
 
 
 
