@@ -5,117 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invitación de Boda - Carlos & Lourdes</title>
 <style>
-  /* ============================
-     FUENTE BEAUTIFUL PEOPLE
-     ============================ */
-  @font-face {
-    font-family: 'BeautifulPeople';
-    src: url('BeautifulPeople.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+/* ============================
+   FUENTE BEAUTIFUL PEOPLE
+   ============================ */
+@font-face {
+  font-family: 'BeautifulPeople';
+  src: url('BeautifulPeople.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background: #f9f7f4;
-    color: #2c2c2c;
-    text-align: center;
-  }
+/* ============================
+   BASE
+   ============================ */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #f9f7f4;
+  color: #2c2c2c;
+  text-align: center;
+}
 
-  /* PORTADA */
-  #portada {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('portada.png.jpg.png') center center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* ahora el contenido empieza arriba */
-    align-items: center;
-    padding-top: 60px; /* sube un poco todo */
-  }
+/* ============================
+   PORTADA
+   ============================ */
+#portada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('portada.png.jpg.png') center center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 60px; /* sube el título y botón */
+}
 
-  #portada h1 {
-    font-family: 'BeautifulPeople', cursive; /* tipografía aplicada */
-    font-size: 3rem;
-    letter-spacing: 3px;
-    color: #f5d98f;
-    text-shadow: 0 0 10px #000;
-    margin: 5px 0 20px 0; /* margen superior más pequeño para subir un poquito */
-  }
+#portada h1 {
+  font-family: 'BeautifulPeople', cursive;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: #f5d98f;
+  text-shadow: 0 0 10px #000;
+  margin: 5px 0 20px 0;
+}
 
-  #btnEntrar {
-    padding: 15px 40px;
-    border: none;
-    border-radius: 10px;
-    background: #f5d98f;
-    color: #000;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    margin-top: 28px; /* sube un poquito el botón */
-  }
+#btnEntrar {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 10px;
+  background: #f5d98f;
+  color: #000;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  margin-top: 25px; /* subido un poco */
+}
 
-  #btnEntrar:hover {
-    background: #e0c56f;
-  }
+#btnEntrar:hover {
+  background: #e0c56f;
+}
 
-  /* CONTENIDO INVITACIÓN */
-  #contenido {
-    display: none;
-    max-width: 650px;
-    margin: 50px auto;
-    padding: 40px 20px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.1);
-  }
+/* ============================
+   CONTENIDO INVITACIÓN
+   ============================ */
+#contenido {
+  display: none;
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+}
 
-  #contenido h1 {
-    font-family: 'BeautifulPeople', cursive; /* tipografía aplicada */
-    font-size: 3rem;
-    letter-spacing: 3px;
-    color: #f5d98f;
-    text-shadow: 0 0 10px #000;
-    margin-bottom: 20px;
-  }
+#contenido h1 {
+  font-family: 'BeautifulPeople', cursive;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: #f5d98f;
+  text-shadow: 0 0 10px #000;
+  margin-bottom: 10px;
+}
 
-  h2 { font-size:1.6em; margin-top:5px; font-weight:normal; color:#555; }
-  .line { width:60%; height:1px; background:#d1c5aa; margin:20px auto; }
-  .phrase { font-style:italic; font-size:1.1em; margin:30px 0; color:#6a6a6a; }
-  .date, .location, .dresscode { font-size:1.2em; margin:15px 0; }
-  .countdown { font-size:1.4em; margin:20px 0; color:#b25a5a; font-weight:bold; }
-  #playButton { padding:12px 25px; font-size:1.2em; cursor:pointer; border:none; border-radius:12px; background-color:#d1c5aa; color:white; margin-top:20px; }
-  #playButton:hover { background-color:#b7997c; }
-  #audioError { color:red; margin-top:15px; font-size:1em; display:none; }
-  footer { margin-top:40px; font-size:0.9em; color:#777; }
+.introPhrase {
+  font-style: italic;
+  font-size: 1.2em;
+  color: #6a6a6a;
+  margin: 15px 0 25px 0;
+  line-height: 1.5em;
+}
 
-  /* AJUSTES PARA MÓVILES */
-  @media (max-width: 600px) {
-    #portada h1 {
-      font-size: 2rem;
-    }
-    #btnEntrar {
-      padding: 12px 30px;
-      font-size: 1rem;
-      margin-top: 10px; /* mantener botón visible */
-    }
-    #portada {
-      padding-top: 40px; /* ajustar posición en móvil */
-      background-size: cover;
-    }
-    #contenido {
-      margin: 20px 15px;
-      padding: 25px 15px;
-    }
-    h2 { font-size:1.4em; }
-    .phrase { font-size:1em; }
-    .date, .location, .dresscode { font-size:1.1em; }
-    .countdown { font-size:1.2em; }
-    #playButton { font-size:1em; padding:10px 20px; }
-  }
+h2 {
+  font-size:1.6em;
+  margin-top:5px;
+  font-weight:normal;
+  color:#555;
+}
+
+.parents {
+  margin: 20px 0;
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.5em;
+}
+
+.father-bridegroom, .mother-bride {
+  margin-top: 10px;
+}
+
+.invitationText {
+  font-size: 1.2em;
+  color: #555;
+  font-style: normal;
+  margin: 15px 0 25px 0;
+  line-height: 1.5em;
+}
+
+.line { width:60%; height:1px; background:#d1c5aa; margin:20px auto; }
+.phrase { font-style:italic; font-size:1.1em; margin:30px 0; color:#6a6a6a; }
+.date, .location, .dresscode { font-size:1.2em; margin:15px 0; }
+.countdown { font-size:1.4em; margin:20px 0; color:#b25a5a; font-weight:bold; }
+.finalDate { font-size:1em; color:#777; margin-top:10px; font-style: italic; }
+
+#playButton {
+  padding:12px 25px;
+  font-size:1.2em;
+  cursor:pointer;
+  border:none;
+  border-radius:12px;
+  background-color:#d1c5aa;
+  color:white;
+  margin-top:20px;
+}
+
+#playButton:hover { background-color:#b7997c; }
+#audioError { color:red; margin-top:15px; font-size:1em; display:none; }
+footer { margin-top:40px; font-size:0.9em; color:#777; }
+
+/* AJUSTES PARA MÓVILES */
+@media (max-width: 600px) {
+  #portada h1 { font-size: 2rem; }
+  #btnEntrar { padding: 12px 30px; font-size: 1rem; margin-top: 15px; }
+  #portada { padding-top: 40px; background-size: cover; }
+  #contenido { margin: 20px 15px; padding: 25px 15px; }
+  h2 { font-size:1.4em; }
+  .introPhrase, .invitationText { font-size: 1em; }
+  .date, .location, .dresscode { font-size:1.1em; }
+  .countdown { font-size:1.2em; }
+  #playButton { font-size:1em; padding:10px 20px; }
+}
 </style>
 </head>
 <body>
@@ -129,7 +169,28 @@
 <!-- CONTENIDO INVITACIÓN -->
 <div id="contenido">
   <h1>Carlos & Lourdes</h1>
+  <div class="introPhrase">
+    Porque no importa el tiempo para darte cuenta que encontraste el amor de tu vida y así comenzar una historia que no tenga fin.
+  </div>
   <h2>¡Nos casamos!</h2>
+
+  <!-- Padres de los novios -->
+  <div class="parents">
+    <div class="father-bridegroom">
+      En compañía de nuestros padres:<br>
+      Encaración Montaño y Patrona Gonzales
+    </div>
+    <div class="mother-bride">
+      y de la novia:<br>
+      Simon Vela (+) y Remigia Cadima
+    </div>
+  </div>
+
+  <!-- Invitación formal -->
+  <div class="invitationText">
+    Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil, en la Catedral San Pedro de Aiquile.
+  </div>
+
   <div class="line"></div>
   <div class="phrase">“Dos almas, un mismo camino.”</div>
   <div class="date">📅 <b>06 de diciembre de 2025</b></div>
@@ -137,66 +198,74 @@
   <div class="location">📍 Salón de eventos <b>“Olimpos”</b></div>
   <div class="dresscode">👗 Dress code: <b>Elegante</b></div>
   <div class="line"></div>
+  
+  <!-- Contador -->
   <div class="countdown" id="countdown">Cargando contador...</div>
+
+  <!-- Fecha final -->
+  <div class="finalDate">Aiquile, diciembre 2025</div>
+
+  <!-- Botón de música -->
   <button id="playButton">🎵 Reproducir música</button>
   <div id="audioError">No se pudo reproducir la música. Tocá de nuevo.</div>
+
   <footer>Con la bendición de Dios y nuestras familias.</footer>
 </div>
 
-<!-- Música desde el repositorio -->
+<!-- Música -->
 <audio id="bgMusic" loop>
   <source src="musica.mp3.mp3" type="audio/mpeg">
   Tu navegador no soporta el audio.
 </audio>
 
 <script>
-  function abrirInvitacion() {
-    document.getElementById("portada").style.display = "none";
-    document.getElementById("contenido").style.display = "block";
-    const bgMusic = document.getElementById("bgMusic");
-    bgMusic.play().catch(() => console.log("No se pudo reproducir automáticamente, clic para reproducir."));
-  }
-
-  // Contador
-  const countdownElement = document.getElementById("countdown");
-  const weddingDate = new Date("December 6, 2025 15:00:00").getTime();
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
-    if (distance < 0) {
-      countdownElement.textContent = "¡Hoy es el gran día!";
-      return;
-    }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para la boda`;
-  }, 1000);
-
-  // Botón reproducir/pausar música
-  const playButton = document.getElementById("playButton");
+function abrirInvitacion() {
+  document.getElementById("portada").style.display = "none";
+  document.getElementById("contenido").style.display = "block";
   const bgMusic = document.getElementById("bgMusic");
-  const audioError = document.getElementById("audioError");
-  let isPlaying = false;
+  bgMusic.play().catch(() => console.log("No se pudo reproducir automáticamente, clic para reproducir."));
+}
 
-  playButton.addEventListener("click", () => {
-    bgMusic.play()
-      .then(() => {
-        isPlaying = true;
-        playButton.textContent = "⏸ Pausar música";
-        audioError.style.display = "none";
-      })
-      .catch(() => audioError.style.display = "block");
-  });
+// Contador
+const countdownElement = document.getElementById("countdown");
+const weddingDate = new Date("December 6, 2025 15:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+  if (distance < 0) {
+    countdownElement.textContent = "¡Hoy es el gran día!";
+    return;
+  }
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para la boda`;
+}, 1000);
 
-  playButton.addEventListener("dblclick", () => {
-    if (isPlaying) {
-      bgMusic.pause();
-      isPlaying = false;
-      playButton.textContent = "🎵 Reproducir música";
-    }
-  });
+// Botón reproducir/pausar música
+const playButton = document.getElementById("playButton");
+const bgMusic = document.getElementById("bgMusic");
+const audioError = document.getElementById("audioError");
+let isPlaying = false;
+
+playButton.addEventListener("click", () => {
+  bgMusic.play()
+    .then(() => {
+      isPlaying = true;
+      playButton.textContent = "⏸ Pausar música";
+      audioError.style.display = "none";
+    })
+    .catch(() => audioError.style.display = "block");
+});
+
+playButton.addEventListener("dblclick", () => {
+  if (isPlaying) {
+    bgMusic.pause();
+    isPlaying = false;
+    playButton.textContent = "🎵 Reproducir música";
+  }
+});
 </script>
 </body>
 </html>
