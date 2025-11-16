@@ -6,7 +6,6 @@
 <title>Invitación - Carlos & Lourdes</title>
 <style>
   @font-face { font-family: 'BirdsOfParadise'; src: url('Birds of Paradise.ttf') format('truetype'); }
-  @font-face { font-family: 'BeautifulPeople'; src: url('BeautifulPeople.ttf') format('truetype'); }
 
   :root{ --bg:#f9f7f4; --accent:#f5d98f; --accent-dark:#e0c56f; --gold-dark:#a67c00; }
 
@@ -17,13 +16,13 @@
   /* === PORTADA === */
   #portada {position: fixed; inset:0; width:100%; height:100vh; background:url('PORTADA3.jpg') center/cover no-repeat;}
   .portada-inner{position:relative; width:100%; height:100%;}
-  /* Nombres portada */
-  .nombres-portada{position:absolute; top:10%; left:0; right:0; height:220px; pointer-events:none;}
-  .nombres-portada .nombre-carlos{position:absolute; right:8%; top:0; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.8rem; line-height:1; text-align:right; text-shadow:0 0 10px rgba(0,0,0,0.6);}
+  .nombres-portada{position:absolute; top:6%; left:0; right:0; height:220px; pointer-events:none;}
+  .nombres-portada .nombre-carlos{position:absolute; left:8%; top:0; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.8rem; line-height:1; text-align:left; text-shadow:0 0 10px rgba(0,0,0,0.6);}
   .nombres-portada .nombre-y{position:absolute; left:50%; transform:translateX(-50%); top:52px; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.6rem; text-shadow:0 0 10px rgba(0,0,0,0.6);}
-  .nombres-portada .nombre-lourdes{position:absolute; left:10%; top:104px; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.8rem; line-height:1; text-shadow:0 0 10px rgba(0,0,0,0.6);}
+  .nombres-portada .nombre-lourdes{position:absolute; right:10%; top:104px; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.8rem; line-height:1; text-align:right; text-shadow:0 0 10px rgba(0,0,0,0.6);}
+
   /* Botón portada */
-  #btnEntrar{position:absolute; top:32%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
+  #btnEntrar{position:absolute; top:25%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
   #btnEntrar:hover{background:var(--accent-dark);}
 
   /* === INVITACION INTERNA === */
@@ -35,13 +34,13 @@
 
   h1.names-inv{font-family:'BirdsOfParadise', serif; font-size:3rem; color:var(--gold-dark); text-align:center; text-shadow:0 0 8px rgba(0,0,0,0.35);}
   .nombres-inv{display:flex; justify-content:center; margin:12px 0; font-family:'BirdsOfParadise', serif; font-size:2.6rem; color:var(--gold-dark);}
-  .nombres-inv .carlos{text-align:right; margin-right:12px;}
+  .nombres-inv .carlos{text-align:left; margin-right:12px;}
   .nombres-inv .y{margin:0 10px; text-align:center;}
-  .nombres-inv .lourdes{text-align:left; margin-left:12px;}
+  .nombres-inv .lourdes{text-align:right; margin-left:12px;}
 
   .introPhrase{font-family:'BirdsOfParadise', serif; font-size:2rem; text-align:center; margin:16px auto 22px auto; line-height:1.4; color:#6a6a6a; max-width:86%;}
 
-  h2.big{text-align:center; font-family:'BirdsOfParadise', serif; font-size:2.4rem; margin:8px 0 12px 0; color:#444;}
+  h2.big{text-align:center; font-family:'BirdsOfParadise', serif; font-size:2.4rem; margin:8px 0 12px 0; color:var(--gold-dark);}
 
   .parents{text-align:center; margin:18px 0 10px 0; font-size:1.3rem; line-height:1.6; color:#444; font-family:'BirdsOfParadise', serif;}
   .parents .line-names{margin-top:6px; font-weight:600;}
@@ -89,7 +88,7 @@
     </div>
   </div>
 
-  <!-- CONTENIDO -->
+  <!-- INVITACION -->
   <div id="contenido" role="main" aria-live="polite">
     <img src="flor_sup_der.png.png" class="corner-flower corner-top-right" alt="">
     <img src="flor_inf_der.png.png" class="corner-flower corner-bottom-right" alt="">
@@ -113,20 +112,16 @@
       <div class="line-names">Remigia Cadima</div>
     </div>
 
-    <div class="invitationText">Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil, en la Catedral San Pedro de Aiquile.</div>
-
-    <div class="decor-line" aria-hidden="true"></div>
-    <div class="phrase-small">“Dos almas, un mismo camino.”</div>
-
-    <div class="date-format">
-      <div class="num">06</div><div class="sep">|</div>
-      <div class="month">Diciembre</div><div class="sep">|</div>
-      <div class="year">2025</div>
+    <div class="invitationText">
+      Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil.<br>
+      Catedral San Pedro Aiquile
     </div>
-
-    <div class="meta">🕒 15:00</div>
-    <div class="meta">📍 Salón de eventos “Olimpos”</div>
-    <div><a href="https://maps.app.goo.gl/Hh512WUcVrqPM95H9" target="_blank" class="map-link">Ver ubicación</a></div>
+    <div style="text-align:center; margin:12px 0;">
+      <img src="iglesia.png" alt="Iglesia" style="max-width:300px;">
+    </div>
+    <div style="text-align:center; margin:10px 0;">
+      <a href="https://maps.app.goo.gl/gkzPheftRCghMEJG7" target="_blank" class="map-link">Ver ubicación</a>
+    </div>
 
     <div class="decor-line" aria-hidden="true"></div>
     <div class="countdown" id="countdown">Cargando contador...</div>
@@ -182,6 +177,8 @@
 </script>
 </body>
 </html>
+
+
 
 
 
