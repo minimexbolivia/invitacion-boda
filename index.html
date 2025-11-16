@@ -42,11 +42,11 @@ body {
 }
 
 #portada h1 {
-  font-family: 'BeautifulPeople', cursive; /* mantenemos fuente de portada */
+  font-family: 'BeautifulPeople', cursive; /* portada mantiene fuente anterior */
   font-size: 3rem;
   letter-spacing: 3px;
-  color: #f5d98f;
-  text-shadow: 0 0 10px #000;
+  color: #FFD700; /* color dorado más visible */
+  text-shadow: 0 0 12px #000;
   margin: 5px 0 20px 0;
 }
 
@@ -78,11 +78,11 @@ body {
   background: white;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0,0,0,0.1);
-  position: relative; /* para que las flores se posicionen dentro */
+  position: relative; /* para flores */
   font-family: 'BirdsOfParadise', serif; /* toda la invitación con nueva fuente */
 }
 
-/* Flores arriba derecha */
+/* Flores esquinas */
 .corner-flower {
   position: absolute;
   width: 80px;
@@ -90,9 +90,11 @@ body {
   z-index: 1;
 }
 .top-right { top: -10px; right: -10px; }
+.bottom-right { bottom: -10px; right: -10px; }
+.bottom-left { bottom: -10px; left: -10px; }
 
 #contenido h1 {
-  font-size: 3rem;
+  font-size: 3.2rem; /* +1 nivel de tamaño */
   letter-spacing: 3px;
   color: #f5d98f;
   text-shadow: 0 0 10px #000;
@@ -101,14 +103,14 @@ body {
 
 .introPhrase {
   font-style: italic;
-  font-size: 1.5em; /* aumentado +3 */
+  font-size: 1.6em; /* aumentado +1 nivel */
   color: #6a6a6a;
   margin: 15px 0 25px 0;
   line-height: 1.5em;
 }
 
 h2 {
-  font-size:1.6em;
+  font-size:1.7em; /* +1 nivel */
   margin-top:5px;
   font-weight:normal;
   color:#555;
@@ -116,7 +118,7 @@ h2 {
 
 .parents {
   margin: 20px 0;
-  font-size: 1.4em; /* aumentado +3 */
+  font-size: 1.5em; /* +1 nivel */
   color: #555;
   line-height: 1.5em;
 }
@@ -126,7 +128,7 @@ h2 {
 }
 
 .invitationText {
-  font-size: 1.5em; /* aumentado +3 */
+  font-size: 1.6em; /* +1 nivel */
   color: #555;
   font-style: normal;
   margin: 15px 0 25px 0;
@@ -134,16 +136,16 @@ h2 {
 }
 
 .line { width:60%; height:1px; background:#d1c5aa; margin:20px auto; }
-.phrase { font-style:italic; font-size:1.1em; margin:30px 0; color:#6a6a6a; }
+.phrase { font-style:italic; font-size:1.2em; margin:30px 0; color:#6a6a6a; }
 
 /* Fecha, hora y contador con fuente simple para números */
 .date, .location, .dresscode, .countdown, .finalDate {
   font-family: 'Georgia', serif;
-  font-size: 1.2em;
+  font-size: 1.3em; /* +1 nivel */
   margin: 15px 0;
 }
 
-.finalDate { font-size:1em; color:#777; margin-top:10px; font-style: italic; }
+.finalDate { font-size:1.1em; color:#777; margin-top:10px; font-style: italic; }
 
 #playButton {
   padding:12px 25px;
@@ -162,14 +164,14 @@ footer { margin-top:40px; font-size:0.9em; color:#777; }
 
 /* AJUSTES PARA MÓVILES */
 @media (max-width: 600px) {
-  #portada h1 { font-size: 2rem; }
+  #portada h1 { font-size: 2.2rem; }
   #btnEntrar { padding: 12px 30px; font-size: 1rem; margin-top: 15px; }
   #portada { padding-top: 40px; background-size: cover; }
   #contenido { margin: 20px 15px; padding: 25px 15px; }
-  h2 { font-size:1.4em; }
-  .introPhrase, .invitationText { font-size: 1.2em; }
-  .date, .location, .dresscode { font-size:1.1em; }
-  .countdown { font-size:1.2em; }
+  h2 { font-size:1.5em; }
+  .introPhrase, .invitationText { font-size: 1.4em; }
+  .date, .location, .dresscode { font-size:1.2em; }
+  .countdown { font-size:1.3em; }
   #playButton { font-size:1em; padding:10px 20px; }
 }
 </style>
@@ -185,8 +187,10 @@ footer { margin-top:40px; font-size:0.9em; color:#777; }
 <!-- CONTENIDO INVITACIÓN -->
 <div id="contenido">
 
-  <!-- Flor arriba derecha -->
-  <img src="flor arriba derecha.png" class="corner-flower top-right">
+  <!-- Flores esquinas -->
+  <img src="ESQUINAsuperiorderecha.png" class="corner-flower top-right">
+  <img src="esquinainferiro derecha.png" class="corner-flower bottom-right">
+  <img src="ESQUINA ABAJO IZQUIERDA.png" class="corner-flower bottom-left">
 
   <h1>Carlos & Lourdes</h1>
   <div class="introPhrase">
@@ -289,7 +293,6 @@ playButton.addEventListener("dblclick", () => {
 </script>
 </body>
 </html>
-
 
 
 
