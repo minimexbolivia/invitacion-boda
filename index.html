@@ -4,24 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación de Boda - Carlos & Lourdes</title>
+
   <style>
-    body { font-family: "Georgia", serif; background: #f9f7f4; color: #2c2c2c; margin:0; padding:0; text-align:center; }
-    .container { max-width:650px; margin:50px auto; padding:40px 20px; background:white; border-radius:20px; box-shadow:0 0 25px rgba(0,0,0,0.1);}
-    h1 { font-size:2.6em; letter-spacing:2px; margin-bottom:5px;}
-    h2 { font-size:1.6em; margin-top:5px; font-weight:normal; color:#555;}
-    .line { width:60%; height:1px; background:#d1c5aa; margin:20px auto;}
-    .phrase { font-style:italic; font-size:1.1em; margin:30px 0; color:#6a6a6a;}
-    .date, .location, .dresscode { font-size:1.2em; margin:15px 0;}
-    footer { margin-top:40px; font-size:0.9em; color:#777;}
-    .countdown { font-size:1.4em; margin:20px 0; color:#b25a5a; font-weight:bold;}
-    #playButton { padding:12px 25px; font-size:1.2em; cursor:pointer; border:none; border-radius:12px; background-color:#d1c5aa; color:white; margin-top:20px;}
-    #playButton:hover { background-color:#b7997c;}
-    #audioError { color:red; margin-top:15px; font-size:1em; display:none;}
+    body {
+      font-family: "Georgia", serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f7f4;
+      color: #2c2c2c;
+      text-align: center;
+    }
+
+    /* PORTADA */
+    .portada {
+      height: 100vh;
+      background: url("https://i.imgur.com/AmxUu0T.png") no-repeat center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .portada h1 {
+      font-size: 3em;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 10px 25px;
+      border-radius: 20px;
+    }
+
+    .portada button {
+      margin-top: 30px;
+      padding: 15px 35px;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 15px;
+      background: #d1c5aa;
+      color: white;
+      cursor: pointer;
+    }
+
+    .portada button:hover {
+      background: #b7997c;
+    }
+
+    /* CONTENIDO INTERNO */
+    .container {
+      display: none;
+      max-width: 650px;
+      margin: 50px auto;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 2.6em;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      margin-top: 5px;
+      font-weight: normal;
+      color: #555;
+    }
+
+    .line {
+      width: 60%;
+      height: 1px;
+      background: #d1c5aa;
+      margin: 20px auto;
+    }
+
+    .phrase {
+      font-style: italic;
+      font-size: 1.1em;
+      margin: 30px 0;
+      color: #6a6a6a;
+    }
+
+    .date, .location, .dresscode {
+      font-size: 1.2em;
+      margin: 15px 0;
+    }
+
+    .countdown {
+      font-size: 1.4em;
+      margin: 20px 0;
+      color: #b25a5a;
+      font-weight: bold;
+    }
+
+    #playButton {
+      padding: 12px 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      background-color: #d1c5aa;
+      color: white;
+      margin-top: 20px;
+    }
+
+    #playButton:hover {
+      background-color: #b7997c;
+    }
+
+    #audioError {
+      color: red;
+      margin-top: 15px;
+      font-size: 1em;
+      display: none;
+    }
   </style>
 </head>
+
 <body>
 
-<div class="container">
+<!-- PORTADA -->
+<div class="portada" id="portada">
+  <h1>Carlos & Lourdes</h1>
+  <button onclick="abrirInvitacion()">Ingresar a la invitación</button>
+</div>
+
+<!-- CONTENIDO INTERNO -->
+<div class="container" id="contenido">
   <h1>Carlos & Lourdes</h1>
   <h2>¡Nos casamos!</h2>
 
@@ -34,85 +144,75 @@
   <div class="dresscode">👗 Dress code: <b>Elegante</b></div>
 
   <div class="line"></div>
+
   <div class="countdown" id="countdown">Cargando contador...</div>
 
   <button id="playButton">🎵 Reproducir música</button>
-  <div id="audioError">No se pudo reproducir la música. Hacé clic en el botón para intentar de nuevo.</div>
+  <div id="audioError">No se pudo reproducir la música. Tocá de nuevo.</div>
 
-  <footer>Con la bendición de Dios y nuestras familias.</footer>
+  <footer style="margin-top:40px;font-size:0.9em;color:#777;">
+    Con la bendición de Dios y nuestras familias.
+  </footer>
 </div>
 
-<!-- Audio desde repositorio -->
+<!-- Audio -->
 <audio id="bgMusic" loop>
   <source src="musica.mp3.mp3" type="audio/mpeg">
-  Tu navegador no soporta el audio.
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Invitación Carlos & Lourdes</title>
-<style>
-body {
-margin: 0;
-font-family: 'Georgia', serif;
-background: #000;
-color: #fff;
-overflow: hidden;
-}
+</audio>
 
+<script>
+  function abrirInvitacion() {
+    document.getElementById("portada").style.display = "none";
+    document.getElementById("contenido").style.display = "block";
+  }
 
-/* PORTADA */
-#portada {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-background: url('https://i.imgur.com/17zqT8p.jpeg') center/cover no-repeat; /* Fondo floral dorado */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-backdrop-filter: brightness(0.7);
-}
+  // Contador
+  const countdownElement = document.getElementById("countdown");
+  const weddingDate = new Date("December 6, 2025 15:00:00").getTime();
 
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-#portada h1 {
-font-size: 3rem;
-letter-spacing: 3px;
-color: #f5d98f;
-text-shadow: 0 0 10px #000;
-}
+    if (distance < 0) {
+      countdownElement.textContent = "¡Hoy es el gran día!";
+      return;
+    }
 
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-#portada h2 {
-font-size: 1.5rem;
-margin-top: -10px;
-color: #fff;
-opacity: 0.8;
-}
+    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para la boda`;
+  }, 1000);
 
+  // Música
+  const playButton = document.getElementById("playButton");
+  const bgMusic = document.getElementById("bgMusic");
+  const audioError = document.getElementById("audioError");
+  let isPlaying = false;
 
-#btnEntrar {
-margin-top: 30px;
-padding: 15px 40px;
-border: 2px solid #f5d98f;
-background: transparent;
-color: #f5d98f;
-font-size: 1.2rem;
-border-radius: 50px;
-cursor: pointer;
-transition: 0.3s;
-}
+  playButton.addEventListener("click", () => {
+    bgMusic.play()
+      .then(() => {
+        isPlaying = true;
+        playButton.textContent = "⏸ Pausar música";
+        audioError.style.display = "none";
+      })
+      .catch(() => {
+        audioError.style.display = "block";
+      });
+  });
 
+  playButton.addEventListener("dblclick", () => {
+    if (isPlaying) {
+      bgMusic.pause();
+      isPlaying = false;
+      playButton.textContent = "🎵 Reproducir música";
+    }
+  });
+</script>
 
-#btnEntrar:hover {
-background: #f5d98f;
-color: #000;
-}
-
-
-/* CONTENIDO INVITACION */
+</body>
 </html>
