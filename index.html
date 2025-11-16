@@ -1,218 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación de Boda - Carlos & Lourdes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Boda</title>
 
-  <style>
-    body {
-      font-family: "Georgia", serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f7f4;
-      color: #2c2c2c;
-      text-align: center;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background: #faf6f1;
+            text-align: center;
+        }
 
-    /* PORTADA */
-    .portada {
-      height: 100vh;
-      background: url("https://i.imgur.com/AmxUu0T.png") no-repeat center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-    }
+        /* ----- PORTADA ----- */
+        #portada {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
 
-    .portada h1 {
-      font-size: 3em;
-      background: rgba(255, 255, 255, 0.7);
-      padding: 10px 25px;
-      border-radius: 20px;
-    }
+        #portada img {
+            width: 85%;
+            max-width: 420px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 25px rgba(0,0,0,0.20);
+        }
 
-    .portada button {
-      margin-top: 30px;
-      padding: 15px 35px;
-      font-size: 1.3em;
-      border: none;
-      border-radius: 15px;
-      background: #d1c5aa;
-      color: white;
-      cursor: pointer;
-    }
+        #portada button {
+            margin-top: 25px;
+            font-size: 1.3rem;
+            background: #c49b66;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .portada button:hover {
-      background: #b7997c;
-    }
+        #portada button:hover {
+            background: #a9814f;
+        }
 
-    /* CONTENIDO INTERNO */
-    .container {
-      display: none;
-      max-width: 650px;
-      margin: 50px auto;
-      padding: 40px 20px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.1);
-    }
+        /* ----- CONTENIDO PRINCIPAL ----- */
+        #contenido {
+            display: none;
+            padding: 20px;
+        }
 
-    h1 {
-      font-size: 2.6em;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
-    }
+        .marco {
+            border: 18px solid transparent;
+            border-image: url("marco-floral.png.jpg") 30 round;
+            padding: 25px;
+            margin: 25px auto;
+            max-width: 700px;
+            background: white;
+        }
 
-    h2 {
-      font-size: 1.6em;
-      margin-top: 5px;
-      font-weight: normal;
-      color: #555;
-    }
+        h1 {
+            font-size: 2.7rem;
+            margin-bottom: 0;
+        }
 
-    .line {
-      width: 60%;
-      height: 1px;
-      background: #d1c5aa;
-      margin: 20px auto;
-    }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 5px;
+            color: #6b4f35;
+        }
 
-    .phrase {
-      font-style: italic;
-      font-size: 1.1em;
-      margin: 30px 0;
-      color: #6a6a6a;
-    }
-
-    .date, .location, .dresscode {
-      font-size: 1.2em;
-      margin: 15px 0;
-    }
-
-    .countdown {
-      font-size: 1.4em;
-      margin: 20px 0;
-      color: #b25a5a;
-      font-weight: bold;
-    }
-
-    #playButton {
-      padding: 12px 25px;
-      font-size: 1.2em;
-      cursor: pointer;
-      border: none;
-      border-radius: 12px;
-      background-color: #d1c5aa;
-      color: white;
-      margin-top: 20px;
-    }
-
-    #playButton:hover {
-      background-color: #b7997c;
-    }
-
-    #audioError {
-      color: red;
-      margin-top: 15px;
-      font-size: 1em;
-      display: none;
-    }
-  </style>
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- PORTADA -->
-<div class="portada" id="portada">
-  <h1>Carlos & Lourdes</h1>
-  <button onclick="abrirInvitacion()">Ingresar a la invitación</button>
-</div>
+    <!-- ===================== PORTADA ===================== -->
+    <div id="portada">
+        <img src="portada.png.jpeg" alt="Portada Boda">
+        <button id="btnEntrar">Entrar a la invitación</button>
+    </div>
 
-<!-- CONTENIDO INTERNO -->
-<div class="container" id="contenido">
-  <h1>Carlos & Lourdes</h1>
-  <h2>¡Nos casamos!</h2>
+    <!-- Música que se reproducirá al entrar -->
+    <audio id="musica" src="musica.mp3.mp3" preload="auto"></audio>
 
-  <div class="line"></div>
-  <div class="phrase">“Dos almas, un mismo camino.”</div>
+    <!-- ===================== CONTENIDO ===================== -->
+    <div id="contenido">
+        <div class="marco">
+            <h1>Carlos & Lourdes</h1>
+            <h2>¡Nos casamos!</h2>
 
-  <div class="date">📅 <b>06 de diciembre de 2025</b></div>
-  <div class="date">🕒 <b>15:00</b></div>
-  <div class="location">📍 Salón de eventos <b>“Olimpos”</b></div>
-  <div class="dresscode">👗 Dress code: <b>Elegante</b></div>
+            <p>Con gran alegría queremos invitarte a celebrar junto a nosotros este día tan especial.</p>
 
-  <div class="line"></div>
+            <p><strong>📅 Fecha:</strong> 12 de Diciembre 2025<br>
+               <strong>⏰ Hora:</strong> 19:30<br>
+               <strong>📍 Lugar:</strong> Salón de eventos “Los Álamos”</p>
 
-  <div class="countdown" id="countdown">Cargando contador...</div>
+            <p>Será un honor contar con tu presencia para compartir este momento único.</p>
+        </div>
+    </div>
 
-  <button id="playButton">🎵 Reproducir música</button>
-  <div id="audioError">No se pudo reproducir la música. Tocá de nuevo.</div>
+    <!-- ===================== SCRIPT ===================== -->
+    <script>
+        const btn = document.getElementById("btnEntrar");
+        const portada = document.getElementById("portada");
+        const contenido = document.getElementById("contenido");
+        const musica = document.getElementById("musica");
 
-  <footer style="margin-top:40px;font-size:0.9em;color:#777;">
-    Con la bendición de Dios y nuestras familias.
-  </footer>
-</div>
-
-<!-- Audio -->
-<audio id="bgMusic" loop>
-  <source src="musica.mp3.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  function abrirInvitacion() {
-    document.getElementById("portada").style.display = "none";
-    document.getElementById("contenido").style.display = "block";
-  }
-
-  // Contador
-  const countdownElement = document.getElementById("countdown");
-  const weddingDate = new Date("December 6, 2025 15:00:00").getTime();
-
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
-
-    if (distance < 0) {
-      countdownElement.textContent = "¡Hoy es el gran día!";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s para la boda`;
-  }, 1000);
-
-  // Música
-  const playButton = document.getElementById("playButton");
-  const bgMusic = document.getElementById("bgMusic");
-  const audioError = document.getElementById("audioError");
-  let isPlaying = false;
-
-  playButton.addEventListener("click", () => {
-    bgMusic.play()
-      .then(() => {
-        isPlaying = true;
-        playButton.textContent = "⏸ Pausar música";
-        audioError.style.display = "none";
-      })
-      .catch(() => {
-        audioError.style.display = "block";
-      });
-  });
-
-  playButton.addEventListener("dblclick", () => {
-    if (isPlaying) {
-      bgMusic.pause();
-      isPlaying = false;
-      playButton.textContent = "🎵 Reproducir música";
-    }
-  });
-</script>
+        btn.addEventListener("click", () => {
+            portada.style.display = "none";
+            contenido.style.display = "block";
+            musica.play().catch(e => console.log("Autoplay bloqueado:", e));
+        });
+    </script>
 
 </body>
 </html>
