@@ -18,7 +18,7 @@ img{max-width:100%; display:block;}
 .portada-inner{position:relative; width:100%; height:100%;}
 
 .nombres-portada{
-  position:absolute; top:20%; /* un poco más arriba */
+  position:absolute; top:12%; /* subido más arriba */
   left:50%;
   transform:translateX(-50%);
   pointer-events:none;
@@ -30,12 +30,12 @@ img{max-width:100%; display:block;}
   font-size:2.4rem;
   color:var(--gold-bright);
   text-shadow:0 0 10px rgba(0,0,0,0.6);
-  white-space:nowrap; /* evita que se rompa en varias líneas */
+  white-space:nowrap;
 }
 
 #btnEntrar{
   position:absolute;
-  top:32%; /* justo debajo de los nombres */
+  top:22%; /* justo debajo de los nombres, más arriba */
   left:50%;
   transform:translateX(-50%);
   background:var(--accent);
@@ -80,6 +80,8 @@ h2.big{font-family:'BirdsOfParadise', serif; font-size:2.2rem; margin:4px 0 4px 
 .date-format .sep{font-size:1.7rem; color:#666;}
 
 .meta{font-family:'Georgia', serif; font-size:1.2rem; margin:2px 0; color:#333;}
+.meta.time{font-size:1.6rem; font-weight:700; color:#333;} /* aumentado tamaño hora */
+
 .countdown{font-family:'Georgia', serif; font-size:1.4rem; font-weight:700; color:#b25a5a; margin:2px 0;}
 
 #playButton{display:block; margin:4px auto; padding:10px 22px; border-radius:10px; border:none; background:#d1c5aa; color:#fff; font-size:1.1rem; cursor:pointer;}
@@ -158,7 +160,7 @@ h2.big{font-family:'BirdsOfParadise', serif; font-size:2.2rem; margin:4px 0 4px 
 
   <img src="separador.png" class="decor-line" alt="Separador">
 
-  <div class="meta">🕒 15:00</div>
+  <div class="meta time">🕒 15:00</div> <!-- hora más grande -->
   <img src="separador.png" class="decor-line" alt="Separador">
 
   <div class="meta">📍 Salón de eventos “Olimpos”</div>
@@ -226,5 +228,4 @@ playBtn.addEventListener('click',()=>{
 </script>
 </body>
 </html>
-
 
