@@ -6,7 +6,6 @@
 <title>Invitación - Carlos & Lourdes</title>
 <style>
   @font-face { font-family: 'BirdsOfParadise'; src: url('Birds of Paradise.ttf') format('truetype'); }
-  @font-face { font-family: 'BeautifulPeople'; src: url('BeautifulPeople.ttf') format('truetype'); }
 
   :root{ --bg:#f9f7f4; --accent:#f5d98f; --accent-dark:#e0c56f; --gold-dark:#a67c00; }
 
@@ -17,58 +16,57 @@
   /* === PORTADA === */
   #portada {position: fixed; inset:0; width:100%; height:100vh; background:url('PORTADA3.jpg') center/cover no-repeat;}
   .portada-inner{position:relative; width:100%; height:100%;}
-  .nombres-portada{position:absolute; top:5%; left:0; right:0; height:220px; pointer-events:none;}
-  .nombres-portada .nombre-carlos{position:absolute; right:8%; top:0; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.6rem; line-height:1; text-align:right; text-shadow:0 0 10px rgba(0,0,0,0.6);}
-  .nombres-portada .nombre-y{position:absolute; left:50%; transform:translateX(-50%); top:48px; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.4rem; text-shadow:0 0 10px rgba(0,0,0,0.6);}
-  .nombres-portada .nombre-lourdes{position:absolute; left:10%; top:98px; font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.6rem; line-height:1; text-shadow:0 0 10px rgba(0,0,0,0.6);}
-  #btnEntrar{position:absolute; top:22%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
+  .nombres-portada{position:absolute; top:10%; left:0; right:0; height:80px; pointer-events:none; text-align:center;}
+  .nombres-portada .nombre-todo{font-family:'BirdsOfParadise', serif; color:var(--gold-dark); font-size:2.8rem; line-height:1; text-shadow:0 0 10px rgba(0,0,0,0.6);}
+  #btnEntrar{position:absolute; top:25%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
   #btnEntrar:hover{background:var(--accent-dark);}
 
   /* === INVITACION INTERNA === */
-  #contenido{display:none; position:relative; max-width:760px; margin:60px auto 40px auto; padding:44px 28px 280px 28px; background:#fff; border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,0.08); overflow:visible;}
-  .corner-flower{position:absolute; width:320px; z-index:2; pointer-events:none;}
-  .corner-top-right{top:-20px; right:-20px;}
+  #contenido{display:none; position:relative; max-width:760px; margin:60px auto 40px auto; padding:44px 28px 140px 28px; background:#fff; border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,0.08); overflow:visible;}
+  
+  .corner-flower{position:absolute; width:160px; z-index:2; pointer-events:none;}
+  .corner-top-right{top:-20px; right:-20px; transform:scale(0.75);} /* reducir 25% */
   .corner-bottom-right{bottom:-20px; right:-20px;}
   .corner-bottom-left{bottom:-20px; left:-20px;}
 
   h1.names-inv{font-family:'BirdsOfParadise', serif; font-size:3rem; color:var(--gold-dark); text-align:center; text-shadow:0 0 8px rgba(0,0,0,0.35);}
-  .nombres-inv{display:flex; justify-content:center; margin:12px 0; font-family:'BirdsOfParadise', serif; font-size:2.8rem; color:var(--gold-dark);}
-  .nombres-inv .carlos{text-align:right; margin-right:12px;}
-  .nombres-inv .y{margin:0 10px; text-align:center;}
-  .nombres-inv .lourdes{text-align:left; margin-left:12px;}
+  
+  .nombres-inv{display:flex; justify-content:center; margin:12px 0; font-family:'BirdsOfParadise', serif; font-size:2.6rem; color:var(--gold-dark);}
+  .nombres-inv .carlos{text-align:right; margin-right:12px; flex:1;}
+  .nombres-inv .y{text-align:center; margin:0 10px; flex:0;}
+  .nombres-inv .lourdes{text-align:left; margin-left:12px; flex:1;}
 
-  .introPhrase{font-family:'BirdsOfParadise', serif; font-size:2.2rem; text-align:center; margin:12px auto 20px auto; line-height:1.3; color:#6a6a6a; max-width:86%;}
+  .introPhrase{font-family:'BirdsOfParadise', serif; font-size:2rem; text-align:center; margin:16px auto 22px auto; line-height:1.4; color:#6a6a6a; max-width:86%;}
 
   h2.big{text-align:center; font-family:'BirdsOfParadise', serif; font-size:2.4rem; margin:8px 0 12px 0; color:var(--gold-dark);}
 
-  .parents{text-align:center; margin:14px 0 10px 0; font-size:1.2rem; line-height:1.5; color:#444; font-family:'BirdsOfParadise', serif;}
-  .parents .line-names{margin-top:4px; font-weight:600;}
+  .parents{text-align:center; margin:18px 0 10px 0; font-size:1.3rem; line-height:1.6; color:#444; font-family:'BirdsOfParadise', serif;}
+  .parents .line-names{margin-top:6px; font-weight:600;}
 
-  .invitationText{font-family:'BirdsOfParadise', serif; font-size:1.8rem; color:#555; text-align:center; margin:18px auto 20px auto; max-width:88%; line-height:1.35;}
+  .invitationText{font-family:'BirdsOfParadise', serif; font-size:1.6rem; color:#555; text-align:center; margin:18px auto 20px auto; max-width:88%; line-height:1.45;}
   .decor-line{width:60%; height:1px; background:#d1c5aa; margin:18px auto;}
-  .phrase-small{font-style:italic; font-size:1.2rem; color:#6a6a6a; text-align:center; margin:16px 0;}
+  .phrase-small{font-style:italic; font-size:1.15rem; color:#6a6a6a; text-align:center; margin:16px 0;}
 
-  .date-format{display:flex; justify-content:center; align-items:center; gap:18px; margin:18px 0;}
-  .date-format .num, .date-format .year{font-family:'Georgia', serif; font-size:1.75rem; font-weight:700;}
-  .date-format .month{font-family:'BirdsOfParadise', serif; font-size:1.6rem; font-weight:700;}
-  .date-format .sep{font-size:1.7rem; color:#666;}
+  .date-format{display:flex; justify-content:center; align-items:center; gap:18px; margin:18px 0; color:var(--gold-dark);}
+  .date-format .num, .date-format .year{font-family:'Georgia', serif; font-size:1.7rem; font-weight:700;}
+  .date-format .month{font-family:'BirdsOfParadise', serif; font-size:1.55rem; font-weight:700;}
+  .date-format .sep{font-size:1.6rem; color:#666;}
 
   .meta{text-align:center; font-family:'Georgia', serif; font-size:1.25rem; margin:10px 0; color:#333;}
 
   .countdown{text-align:center; font-family:'Georgia', serif; font-size:1.5rem; font-weight:700; color:#b25a5a; margin:18px 0;}
 
-  .finalDate{text-align:center; font-family:'Georgia', serif; font-size:1.05rem; color:#777; margin-top:10px; font-style:italic;}
-
   #playButton{display:block; margin:18px auto; padding:10px 22px; border-radius:10px; border:none; background:#d1c5aa; color:#fff; font-size:1.1rem; cursor:pointer;}
   #playButton:hover{background:#b7997c;}
 
-  .map-link{display:inline-block; margin-top:6px; padding:8px 12px; border:2px solid #c9a97a; border-radius:8px; color:var(--gold-dark); font-weight:700;}
-  .end-space{height:720px;} /* doble espacio al final */
+  .map-link{display:block; margin:8px auto 0 auto; padding:8px 12px; border:2px solid #c9a97a; border-radius:8px; color:var(--gold-dark); font-weight:700; text-align:center;}
+
+  .end-space{height:720px;} /* doble espacio final */
 
   @media(max-width:700px){
-    .corner-flower{width:240px;}
-    .introPhrase{font-size:1.6rem; max-width:92%;}
-    .date-format .num,.date-format .year{font-size:1.3rem;}
+    .corner-flower{width:120px;}
+    .introPhrase{font-size:1.4rem; max-width:92%;}
+    .date-format .num,.date-format .year{font-size:1.4rem;}
     .date-format .month{font-size:1.2rem;}
     .countdown{font-size:1.1rem;}
   }
@@ -79,9 +77,7 @@
   <div id="portada">
     <div class="portada-inner">
       <div class="nombres-portada" aria-hidden="true">
-        <div class="nombre-carlos">Carlos</div>
-        <div class="nombre-y">&</div>
-        <div class="nombre-lourdes">Lourdes</div>
+        <div class="nombre-todo">Carlos & Lourdes</div>
       </div>
       <button id="btnEntrar" onclick="abrirInvitacion()">Ingresar a la invitación</button>
     </div>
@@ -113,11 +109,12 @@
 
     <div class="invitationText">Los invitamos a celebrar el enlace matrimonial, por lo religioso y civil, en la Catedral San Pedro de Aiquile.</div>
 
-    <img src="iglesia.png" alt="Iglesia" style="display:block; margin:10px auto; max-width:180px;">
-    <div><a href="https://maps.app.goo.gl/gkzPheftRCghMEJG7" target="_blank" class="map-link">Ver ubicación</a></div>
+    <img src="iglesia.png" alt="Iglesia" style="display:block; margin:8px auto 4px auto; max-width:280px;">
+
+    <a href="https://maps.app.goo.gl/gkzPheftRCghMEJG7" target="_blank" class="map-link">Ver ubicación</a>
 
     <div class="decor-line" aria-hidden="true"></div>
-    <div class="phrase-small">“Dos almas, un mismo camino.”</div>
+    <div class="countdown" id="countdown">Cargando contador...</div>
 
     <div class="date-format">
       <div class="num">06</div><div class="sep">|</div>
@@ -128,11 +125,10 @@
     <div class="meta">🕒 15:00</div>
     <div class="meta">📍 Salón de eventos “Olimpos”</div>
 
-    <div class="decor-line" aria-hidden="true"></div>
-    <div class="countdown" id="countdown">Cargando contador...</div>
-    <div class="finalDate">Aiquile, diciembre 2025</div>
     <button id="playButton">🎵 Reproducir música</button>
     <div id="audioError" style="display:none;color:red;margin-top:8px;">No se pudo reproducir la música. Tocá de nuevo.</div>
+
+    <footer style="margin-top:24px;">Con la bendición de Dios y nuestras familias.</footer>
     <div class="end-space" aria-hidden="true"></div>
   </div>
 
