@@ -17,7 +17,7 @@
   #portada {position: fixed; inset:0; width:100%; height:100vh; background:url('PORTADA3.jpg') center/cover no-repeat;}
   .portada-inner{position:relative; width:100%; height:100%;}
   .nombres-portada{position:absolute; top:10%; left:0; right:0; height:80px; pointer-events:none; text-align:center;}
-  .nombres-portada .nombre-todo{font-family:'BirdsOfParadise', serif; color:#fff; font-size:2.8rem; line-height:1; text-shadow:0 0 10px rgba(0,0,0,0.6);}
+  .nombres-portada .nombre-todo{font-family:'BirdsOfParadise', serif; color:#fff; font-size:2.8rem; line-height:1; text-shadow:0 0 12px #a67c00, 0 0 20px #fff;} /* resplandor dorado exterior */
   #btnEntrar{position:absolute; top:18%; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; border:none; padding:12px 30px; border-radius:12px; font-size:1.05rem; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.25);}
   #btnEntrar:hover{background:var(--accent-dark);}
 
@@ -25,7 +25,7 @@
   #contenido{display:none; position:relative; max-width:760px; margin:60px auto 40px auto; padding:44px 28px 140px 28px; background:#fff; border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,0.08); overflow:visible;}
   
   .corner-flower{position:absolute; width:160px; z-index:2; pointer-events:none;}
-  .corner-top-right{top:-20px; right:-20px; transform:scale(0.75);} /* reducir 25% */
+  .corner-top-right{top:-20px; right:-20px; transform:scale(0.75);}
   .corner-bottom-right{bottom:-20px; right:-20px;}
   .corner-bottom-left{bottom:-20px; left:-20px;}
 
@@ -43,8 +43,8 @@
   .parents{text-align:center; margin:18px 0 10px 0; font-size:1.3rem; line-height:1.6; color:#444; font-family:'BirdsOfParadise', serif;}
   .parents .line-names{margin-top:6px; font-weight:600;}
 
-  .invitationText{font-family:'BirdsOfParadise', serif; font-size:1.6rem; color:#555; text-align:center; margin:18px auto 8px auto; max-width:88%; line-height:1.45;} /* solo primera parte */
-  .church-name{font-family:'BirdsOfParadise', serif; font-size:1.6rem; text-align:center; color:#555; margin:4px auto 12px auto;}
+  .invitationText{font-family:'BirdsOfParadise', serif; font-size:1.6rem; color:#555; text-align:center; margin:18px auto 8px auto; max-width:88%; line-height:1.45;} 
+  .church-name{font-family:'BirdsOfParadise', serif; font-size:1.6rem; text-align:center; color:#a67c00; margin:4px auto 12px auto;} /* dorado oscuro */
 
   .decor-line{width:60%; height:1px; background:#d1c5aa; margin:18px auto;}
   .phrase-small{font-style:italic; font-size:1.15rem; color:#6a6a6a; text-align:center; margin:16px 0;}
@@ -56,14 +56,15 @@
 
   .meta{text-align:center; font-family:'Georgia', serif; font-size:1.25rem; margin:10px 0; color:#333;}
 
-  .countdown{text-align:center; font-family:'Georgia', serif; font-size:1.5rem; font-weight:700; color:#b25a5a; margin:18px 0;}
+  .countdown{text-align:center; font-family:'Georgia', serif; font-size:1.5rem; font-weight:700; color:#b25a5a; margin:8px 0;}
 
   #playButton{display:block; margin:18px auto; padding:10px 22px; border-radius:10px; border:none; background:#d1c5aa; color:#fff; font-size:1.1rem; cursor:pointer;}
   #playButton:hover{background:#b7997c;}
 
   .map-link{display:block; margin:4px auto 0 auto; padding:8px 12px; border:2px solid #c9a97a; border-radius:8px; color:var(--gold-dark); font-weight:700; text-align:center;}
+  .faltan{text-align:center; color:#a67c00; font-size:1.5rem; margin:8px 0;}
 
-  .end-space{height:720px;} /* doble espacio final */
+  .end-space{height:720px;}
 
   @media(max-width:700px){
     .corner-flower{width:120px;}
@@ -115,7 +116,7 @@
     <div class="church-name">Catedral Parroquia San Pedro de Aiquile</div>
     <a href="https://maps.app.goo.gl/gkzPheftRCghMEJG7" target="_blank" class="map-link">Ver ubicación</a>
 
-    <div class="decor-line" aria-hidden="true"></div>
+    <div class="faltan">FALTAN</div>
     <div class="countdown" id="countdown">Cargando contador...</div>
 
     <div class="date-format">
@@ -126,6 +127,7 @@
 
     <div class="meta">🕒 15:00</div>
     <div class="meta">📍 Salón de eventos “Olimpos”</div>
+    <a href="https://maps.app.goo.gl/Hh512WUcVrqPM95H9" target="_blank" class="map-link">Ver ubicación</a>
 
     <button id="playButton">🎵 Reproducir música</button>
     <div id="audioError" style="display:none;color:red;margin-top:8px;">No se pudo reproducir la música. Tocá de nuevo.</div>
@@ -179,6 +181,7 @@
 </script>
 </body>
 </html>
+
 
 
 
