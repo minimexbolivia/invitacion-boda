@@ -27,13 +27,13 @@ body {
 }
 
 /* ============================
-   PORTADA (sin cambios)
+   PORTADA
    ============================ */
 #portada {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('portada.png.jpg.png') center center/cover no-repeat;
+  background: url('PORTADA3.jpg') center center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,7 +42,7 @@ body {
 }
 
 #portada h1 {
-  font-family: 'BeautifulPeople', cursive; /* portada mantiene fuente anterior */
+  font-family: 'BeautifulPeople', cursive; /* mantenemos fuente de portada */
   font-size: 3rem;
   letter-spacing: 3px;
   color: #f5d98f;
@@ -79,17 +79,16 @@ body {
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0,0,0,0.1);
   position: relative; /* para que las flores se posicionen dentro */
-  font-family: 'BirdsOfParadise', serif; /* toda la invitación con la nueva fuente */
+  font-family: 'BirdsOfParadise', serif; /* toda la invitación con nueva fuente */
 }
 
-/* Flores en las esquinas */
+/* Flores arriba derecha */
 .corner-flower {
   position: absolute;
   width: 80px;
   height: auto;
   z-index: 1;
 }
-.top-left { top: -10px; left: -10px; }
 .top-right { top: -10px; right: -10px; }
 
 #contenido h1 {
@@ -102,7 +101,7 @@ body {
 
 .introPhrase {
   font-style: italic;
-  font-size: 1.2em;
+  font-size: 1.5em; /* aumentado +3 */
   color: #6a6a6a;
   margin: 15px 0 25px 0;
   line-height: 1.5em;
@@ -117,7 +116,7 @@ h2 {
 
 .parents {
   margin: 20px 0;
-  font-size: 1.1em;
+  font-size: 1.4em; /* aumentado +3 */
   color: #555;
   line-height: 1.5em;
 }
@@ -127,7 +126,7 @@ h2 {
 }
 
 .invitationText {
-  font-size: 1.2em;
+  font-size: 1.5em; /* aumentado +3 */
   color: #555;
   font-style: normal;
   margin: 15px 0 25px 0;
@@ -136,8 +135,14 @@ h2 {
 
 .line { width:60%; height:1px; background:#d1c5aa; margin:20px auto; }
 .phrase { font-style:italic; font-size:1.1em; margin:30px 0; color:#6a6a6a; }
-.date, .location, .dresscode { font-size:1.2em; margin:15px 0; }
-.countdown { font-size:1.4em; margin:20px 0; color:#b25a5a; font-weight:bold; }
+
+/* Fecha, hora y contador con fuente simple para números */
+.date, .location, .dresscode, .countdown, .finalDate {
+  font-family: 'Georgia', serif;
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
 .finalDate { font-size:1em; color:#777; margin-top:10px; font-style: italic; }
 
 #playButton {
@@ -162,7 +167,7 @@ footer { margin-top:40px; font-size:0.9em; color:#777; }
   #portada { padding-top: 40px; background-size: cover; }
   #contenido { margin: 20px 15px; padding: 25px 15px; }
   h2 { font-size:1.4em; }
-  .introPhrase, .invitationText { font-size: 1em; }
+  .introPhrase, .invitationText { font-size: 1.2em; }
   .date, .location, .dresscode { font-size:1.1em; }
   .countdown { font-size:1.2em; }
   #playButton { font-size:1em; padding:10px 20px; }
@@ -180,9 +185,8 @@ footer { margin-top:40px; font-size:0.9em; color:#777; }
 <!-- CONTENIDO INVITACIÓN -->
 <div id="contenido">
 
-  <!-- Flores en las esquinas -->
-  <img src="flor-top-left.png" class="corner-flower top-left">
-  <img src="flor-top-right.png" class="corner-flower top-right">
+  <!-- Flor arriba derecha -->
+  <img src="flor arriba derecha.png" class="corner-flower top-right">
 
   <h1>Carlos & Lourdes</h1>
   <div class="introPhrase">
@@ -209,10 +213,10 @@ footer { margin-top:40px; font-size:0.9em; color:#777; }
 
   <div class="line"></div>
   <div class="phrase">“Dos almas, un mismo camino.”</div>
-  <div class="date">📅 <b>06 de diciembre de 2025</b></div>
-  <div class="date">🕒 <b>15:00</b></div>
-  <div class="location">📍 Salón de eventos <b>“Olimpos”</b></div>
-  <div class="dresscode">👗 Dress code: <b>Elegante</b></div>
+  <div class="date">📅 06 de diciembre de 2025</div>
+  <div class="date">🕒 15:00</div>
+  <div class="location">📍 Salón de eventos “Olimpos”</div>
+  <div class="dresscode">👗 Dress code: Elegante</div>
   <div class="line"></div>
 
   <!-- Contador -->
@@ -285,7 +289,6 @@ playButton.addEventListener("dblclick", () => {
 </script>
 </body>
 </html>
-
 
 
 
